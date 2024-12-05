@@ -60,8 +60,8 @@ pub fn run() -> Result<()> {
     let options = fetch_run_options();
 
     match options.day {
-        1 => day1::process(options.part, options.input_file_path),
-        2 => day2::process(options.part, options.input_file_path),
+        1 => day1::process(options.part, &options.input_file_path),
+        2 => day2::process(options.part, &options.input_file_path),
         _ => Err(anyhow!("invalid day")),
     }
 }

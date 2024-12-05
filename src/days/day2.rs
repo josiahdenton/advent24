@@ -6,7 +6,7 @@ use crate::Part;
 const MIN_GAP: u32 = 1;
 const MAX_GAP: u32 = 3;
 
-pub fn process(part: Part, file_path: String) -> Result<()> {
+pub fn process(part: Part, file_path: &str) -> Result<()> {
     let fp = fs::OpenOptions::new().read(true).open(file_path)?;
     let mut reader = std::io::BufReader::new(fp);
     let mut num_good_reports = 0;
@@ -123,7 +123,7 @@ mod tests {
     #[test]
     fn test_simple_input_p1() {
         assert!(
-            process(Part::P1, String::from("./tests/day2.txt")).is_ok(),
+            process(Part::P1, "./tests/day2.txt").is_ok(),
             "failed to process day2 sample input"
         );
     }
@@ -131,7 +131,7 @@ mod tests {
     #[test]
     fn test_simple_input_p2() {
         assert!(
-            process(Part::P2, String::from("./tests/day2.txt")).is_ok(),
+            process(Part::P2, "./tests/day2.txt").is_ok(),
             "failed to process day2 sample input"
         );
     }
@@ -139,7 +139,7 @@ mod tests {
     #[test]
     fn test_day_input_p1() {
         assert!(
-            process(Part::P1, String::from("./inputs/day2.txt")).is_ok(),
+            process(Part::P1, "./inputs/day2.txt").is_ok(),
             "failed to process day2 user input"
         );
     }
@@ -147,7 +147,7 @@ mod tests {
     #[test]
     fn test_day_input_p2() {
         assert!(
-            process(Part::P2, String::from("./inputs/day2.txt")).is_ok(),
+            process(Part::P2, "./inputs/day2.txt").is_ok(),
             "failed to process day2 user input"
         );
     }
