@@ -1,0 +1,10 @@
+[package]
+name = "advent24"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.93"
+clap = { version = "4.5.21", features = ["cargo"] }
+crossterm = "0.28.1"
+ratatui = "0.29.0"
